@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="64b81df18c074202903a3e5ea166e02b" Name="Diagram1">
+        <EntityTypeShape EntityType="Train_ReservationModel.Ticket_Cancellation" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Train_ReservationModel.Ticket_Confirmation" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Train_ReservationModel.Train" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Train_ReservationModel.User_LogIn" Width="1.5" PointX="3.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Train_ReservationModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Train_ReservationModel.Berth_Availability" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Train_ReservationModel.Seat_Fare" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Ticket_Ca__PNR_N__2CBDA3B5" ManuallyRouted="false" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Ticket_Ca__Train__2AD55B43" ManuallyRouted="false" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Ticket_Ca__User___2BC97F7C" ManuallyRouted="false" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Ticket_Co__Train__2704CA5F" ManuallyRouted="false" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Ticket_Co__User___27F8EE98" ManuallyRouted="false" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Berth_Ava__Train__1E6F845E" ManuallyRouted="false" />
+        <AssociationConnector Association="Train_ReservationModel.FK__Seat_Fare__Train__24285DB4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

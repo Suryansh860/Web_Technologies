@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Train_ReservationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Train_Reservation.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Password" />
+    </Key>
+    <Property Name="Admin_Id" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Admin_Name" Type="varchar" MaxLength="25" />
+    <Property Name="Admin_Password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Train_Reservation.dbo.Berth_Availability' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Berth_Availability">
+    <Key>
+      <PropertyRef Name="Sr_No" />
+    </Key>
+    <Property Name="Sr_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Train_No" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="1-AC" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="2-AC" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="SL-Class" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="Total_Available_Berths" Type="numeric" Precision="4" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Train_Reservation.dbo.Seat_Fare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Seat_Fare">
+    <Key>
+      <PropertyRef Name="Sr_No" />
+    </Key>
+    <Property Name="Sr_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Train_No" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="1-AC Fare" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="2-AC Fare" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="SL-Class Fare" Type="numeric" Precision="5" Scale="0" />
+  </EntityType>
+  <EntityType Name="Ticket_Cancellation">
+    <Key>
+      <PropertyRef Name="Cancel_Id" />
+    </Key>
+    <Property Name="Cancel_Id" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Train_No" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="Passenger_Name" Type="varchar" MaxLength="25" />
+    <Property Name="Age" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="User_Id" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Berth" Type="varchar" MaxLength="10" />
+    <Property Name="Paid_Amount" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="PNR_No" Type="numeric" Precision="20" Scale="0" />
+    <Property Name="Cancel_Date" Type="date" />
+    <Property Name="Cancel_Status" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Ticket_Confirmation">
+    <Key>
+      <PropertyRef Name="PNR_No" />
+    </Key>
+    <Property Name="Train_No" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="Passenger_Name" Type="varchar" MaxLength="25" />
+    <Property Name="Age" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="User_Id" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Source_Station" Type="varchar" MaxLength="30" />
+    <Property Name="Destination_Station" Type="varchar" MaxLength="30" />
+    <Property Name="Berth" Type="varchar" MaxLength="10" />
+    <Property Name="Paid_Amount" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="Booking_Date" Type="date" />
+    <Property Name="Travelling_Date" Type="date" />
+    <Property Name="PNR_No" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trains">
+    <Key>
+      <PropertyRef Name="Train_No" />
+    </Key>
+    <Property Name="Train_No" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Train_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Source_Station" Type="varchar" MaxLength="30" />
+    <Property Name="Destination_Station" Type="varchar" MaxLength="30" />
+    <Property Name="Departure_Time" Type="time" Precision="7" />
+    <Property Name="Arrival_Time" Type="time" Precision="7" />
+    <Property Name="isActiven" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_LogIn">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="User_Name" Type="varchar" MaxLength="25" />
+    <Property Name="User_Age" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="User_Password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Berth_Ava__Train__1E6F845E">
+    <End Role="Trains" Type="Self.Trains" Multiplicity="0..1" />
+    <End Role="Berth_Availability" Type="Self.Berth_Availability" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trains">
+        <PropertyRef Name="Train_No" />
+      </Principal>
+      <Dependent Role="Berth_Availability">
+        <PropertyRef Name="Train_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Seat_Fare__Train__24285DB4">
+    <End Role="Trains" Type="Self.Trains" Multiplicity="0..1" />
+    <End Role="Seat_Fare" Type="Self.Seat_Fare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trains">
+        <PropertyRef Name="Train_No" />
+      </Principal>
+      <Dependent Role="Seat_Fare">
+        <PropertyRef Name="Train_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ticket_Ca__PNR_N__318258D2">
+    <End Role="Ticket_Confirmation" Type="Self.Ticket_Confirmation" Multiplicity="0..1" />
+    <End Role="Ticket_Cancellation" Type="Self.Ticket_Cancellation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket_Confirmation">
+        <PropertyRef Name="PNR_No" />
+      </Principal>
+      <Dependent Role="Ticket_Cancellation">
+        <PropertyRef Name="PNR_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ticket_Ca__Train__2F9A1060">
+    <End Role="Trains" Type="Self.Trains" Multiplicity="0..1" />
+    <End Role="Ticket_Cancellation" Type="Self.Ticket_Cancellation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trains">
+        <PropertyRef Name="Train_No" />
+      </Principal>
+      <Dependent Role="Ticket_Cancellation">
+        <PropertyRef Name="Train_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ticket_Ca__User___308E3499">
+    <End Role="User_LogIn" Type="Self.User_LogIn" Multiplicity="0..1" />
+    <End Role="Ticket_Cancellation" Type="Self.Ticket_Cancellation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_LogIn">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Ticket_Cancellation">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ticket_Co__Train__2704CA5F">
+    <End Role="Trains" Type="Self.Trains" Multiplicity="0..1" />
+    <End Role="Ticket_Confirmation" Type="Self.Ticket_Confirmation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trains">
+        <PropertyRef Name="Train_No" />
+      </Principal>
+      <Dependent Role="Ticket_Confirmation">
+        <PropertyRef Name="Train_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ticket_Co__User___27F8EE98">
+    <End Role="User_LogIn" Type="Self.User_LogIn" Multiplicity="0..1" />
+    <End Role="Ticket_Confirmation" Type="Self.Ticket_Confirmation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_LogIn">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Ticket_Confirmation">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Add_Fair" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tn_no" Type="numeric" Mode="In" />
+    <Parameter Name="F_Af" Type="numeric" Mode="In" />
+    <Parameter Name="S_Af" Type="numeric" Mode="In" />
+    <Parameter Name="Slf" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="Add_Seat_In_Berth_Availability" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tn_no" Type="numeric" Mode="In" />
+    <Parameter Name="AC1_Seats" Type="numeric" Mode="In" />
+    <Parameter Name="AC2_Seats" Type="numeric" Mode="In" />
+    <Parameter Name="SL_Seats" Type="numeric" Mode="In" />
+    <Parameter Name="Tot_Seats" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="UpdateBookedTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TrainNo" Type="numeric" Mode="In" />
+    <Parameter Name="Class" Type="nvarchar" Mode="In" />
+    <Parameter Name="SeatsBooked" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateCancelTickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TrainNo" Type="numeric" Mode="In" />
+    <Parameter Name="Class" Type="nvarchar" Mode="In" />
+    <Parameter Name="SeatsBooked" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Train_ReservationModelStoreContainer">
+    <EntitySet Name="Ticket_Cancellation" EntityType="Self.Ticket_Cancellation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ticket_Confirmation" EntityType="Self.Ticket_Confirmation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trains" EntityType="Self.Trains" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_LogIn" EntityType="Self.User_LogIn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Admin].[Admin_Id] AS [Admin_Id], 
+    [Admin].[Admin_Name] AS [Admin_Name], 
+    [Admin].[Admin_Password] AS [Admin_Password]
+    FROM [dbo].[Admin] AS [Admin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Berth_Availability" EntityType="Self.Berth_Availability" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Berth_Availability].[Sr_No] AS [Sr_No], 
+    [Berth_Availability].[Train_No] AS [Train_No], 
+    [Berth_Availability].[1-AC] AS [1-AC], 
+    [Berth_Availability].[2-AC] AS [2-AC], 
+    [Berth_Availability].[SL-Class] AS [SL-Class], 
+    [Berth_Availability].[Total_Available_Berths] AS [Total_Available_Berths]
+    FROM [dbo].[Berth_Availability] AS [Berth_Availability]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Seat_Fare" EntityType="Self.Seat_Fare" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Seat_Fare].[Sr_No] AS [Sr_No], 
+    [Seat_Fare].[Train_No] AS [Train_No], 
+    [Seat_Fare].[1-AC Fare] AS [1-AC Fare], 
+    [Seat_Fare].[2-AC Fare] AS [2-AC Fare], 
+    [Seat_Fare].[SL-Class Fare] AS [SL-Class Fare]
+    FROM [dbo].[Seat_Fare] AS [Seat_Fare]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Berth_Ava__Train__1E6F845E" Association="Self.FK__Berth_Ava__Train__1E6F845E">
+      <End Role="Trains" EntitySet="Trains" />
+      <End Role="Berth_Availability" EntitySet="Berth_Availability" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Seat_Fare__Train__24285DB4" Association="Self.FK__Seat_Fare__Train__24285DB4">
+      <End Role="Trains" EntitySet="Trains" />
+      <End Role="Seat_Fare" EntitySet="Seat_Fare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ticket_Ca__PNR_N__318258D2" Association="Self.FK__Ticket_Ca__PNR_N__318258D2">
+      <End Role="Ticket_Confirmation" EntitySet="Ticket_Confirmation" />
+      <End Role="Ticket_Cancellation" EntitySet="Ticket_Cancellation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ticket_Ca__Train__2F9A1060" Association="Self.FK__Ticket_Ca__Train__2F9A1060">
+      <End Role="Trains" EntitySet="Trains" />
+      <End Role="Ticket_Cancellation" EntitySet="Ticket_Cancellation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ticket_Ca__User___308E3499" Association="Self.FK__Ticket_Ca__User___308E3499">
+      <End Role="User_LogIn" EntitySet="User_LogIn" />
+      <End Role="Ticket_Cancellation" EntitySet="Ticket_Cancellation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ticket_Co__Train__2704CA5F" Association="Self.FK__Ticket_Co__Train__2704CA5F">
+      <End Role="Trains" EntitySet="Trains" />
+      <End Role="Ticket_Confirmation" EntitySet="Ticket_Confirmation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ticket_Co__User___27F8EE98" Association="Self.FK__Ticket_Co__User___27F8EE98">
+      <End Role="User_LogIn" EntitySet="User_LogIn" />
+      <End Role="Ticket_Confirmation" EntitySet="Ticket_Confirmation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

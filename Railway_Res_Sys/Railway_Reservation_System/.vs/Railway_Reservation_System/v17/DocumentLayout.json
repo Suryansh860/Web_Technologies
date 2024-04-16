@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|d:\\railway_res_sys\\railway_reservation_system\\railway_reservation_system\\businesslayer\\user\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\businesslayer\\user\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|D:\\Railway_Res_Sys\\Railway_Reservation_System\\railway_reservation_system\\businesslayer\\admin\\admin_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\businesslayer\\admin\\admin_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|D:\\Railway_Res_Sys\\Railway_Reservation_System\\railway_reservation_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|D:\\Railway_Res_Sys\\Railway_Reservation_System\\railway_reservation_system\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|D:\\Railway_Res_Sys\\Railway_Reservation_System\\railway_reservation_system\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|D:\\Railway_Res_Sys\\Railway_Reservation_System\\railway_reservation_system\\berth_availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\berth_availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|D:\\Railway_Res_Sys\\Railway_Reservation_System\\railway_reservation_system\\ticket_confirmation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E3948F-2AEA-4ED0-96CC-A608CEBC4A5D}|Railway_Reservation_System\\Railway_Reservation_System.csproj|solutionrelative:railway_reservation_system\\ticket_confirmation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Model1.edmx",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\Model1.edmx",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Railway_Reservation_System\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-04-15T07:44:50.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "ViewState": "AQIAANcBAAAAAAAAAAAywGAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T07:31:43.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Model1.Context.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Model1.Context.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\Model1.Context.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Model1.Context.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\Model1.Context.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAB8AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T17:01:14.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admin_Page.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "ViewState": "AQIAADYBAAAAAAAAAAAAAC8BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T07:31:27.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Program.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\Program.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Program.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T09:53:41.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Berth_Availability.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Berth_Availability.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\Berth_Availability.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Berth_Availability.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\Berth_Availability.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAArwA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T17:56:03.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ticket_Confirmation.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Ticket_Confirmation.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\Ticket_Confirmation.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Ticket_Confirmation.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\Ticket_Confirmation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T17:21:26.448Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
