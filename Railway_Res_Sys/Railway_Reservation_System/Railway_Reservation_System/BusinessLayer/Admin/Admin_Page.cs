@@ -56,38 +56,43 @@ namespace Railway_Reservation_System.BusinessLayer.Admin
 
 
 
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("==================================================================================================================");
+                Console.WriteLine("1. Add Trains \n2. Modify Trains \n3. Activate_Deactivate Trains \n4. Delete Trains \n5. Exit\n");
+                Console.WriteLine("=> Select the respective options\n");
+                int Admin_Input = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("==================================================================================================================");
-            Console.WriteLine("1. Add Trains \n2. Modify Trains \n3. Activate_Deactivate Trains \n4. Delete Trains \n5. Exit\n");
-            Console.WriteLine("=> Select the respective options\n");
-            int Admin_Input = int.Parse(Console.ReadLine());
+                if (Admin_Input == 1)
+                {
+                    Add_Trains();
+                }
+                else if (Admin_Input == 2)
+                {
+                    Modify_Trains();
+                }
+                else if (Admin_Input == 3)
+                {
+                    Activate_Deactivate();
+                }
+                else if (Admin_Input == 4)
+                {
+                    Delete_Trains();
+                }
+                else if (Admin_Input == 5)
+                {
+                    flag = false;
+                    Exit();
+                }
+                else
+                {
+                    Console.WriteLine("\t\t\t\t\t Wrong Input !!! \nPlease Choose Respective options");
+                    //Admin_LogIn();
 
-            if (Admin_Input == 1)
-            {
-                Add_Trains();
+                }
             }
-            else if (Admin_Input == 2)
-            {
-                Modify_Trains();
-            }
-            else if (Admin_Input == 3)
-            {
-                Activate_Deactivate();
-            }
-            else if (Admin_Input == 4)
-            {
-                Delete_Trains();
-            }
-            else if (Admin_Input == 5)
-            {
-                Exit();
-            }
-            else
-            {
-                Console.WriteLine("\t\t\t\t\t Wrong Input !!! \nPlease Choose Respective options");
-                Admin_LogIn();
-
-            }
+           
         }
 
         public static void Add_Trains()
@@ -157,7 +162,7 @@ namespace Railway_Reservation_System.BusinessLayer.Admin
 
             else
             {
-                ////////////////////////////////////////////////////////////////////
+                
                 Console.WriteLine($"Train number {tn_no} is already exist so you can not add this train.........To add again press (a) and enter or press (e) for exit\n");
                 Console.Write("=>");
                 string sel = Console.ReadLine();    
@@ -206,7 +211,8 @@ namespace Railway_Reservation_System.BusinessLayer.Admin
             else
             {
                 Console.WriteLine($"Train no. {tr_no} doesn't exist in Database so You can't modify...\n");
-                Console.WriteLine("Please Enter a valid Train Number: ");
+                Console.WriteLine("\n\n\n |||Please Enter a valid Train Number.||| ");
+                Console.WriteLine();
                 Modify_Trains();
             }
         }

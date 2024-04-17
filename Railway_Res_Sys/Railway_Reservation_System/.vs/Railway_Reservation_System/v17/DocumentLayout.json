@@ -38,8 +38,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
+              "ViewState": "AQIAABABAAAAAAAAAAAcwBwBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T07:31:43.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admin_Page.cs",
+              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "RelativeDocumentMoniker": "Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "RelativeToolTip": "Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
+              "ViewState": "AQIAAAkBAAAAAAAAAAAQwBABAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T07:31:27.199Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -50,19 +75,6 @@
               "RelativeToolTip": "Railway_Reservation_System\\Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2024-04-15T07:44:50.81Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
-              "RelativeDocumentMoniker": "Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
-              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
-              "RelativeToolTip": "Railway_Reservation_System\\BusinessLayer\\User\\User.cs",
-              "ViewState": "AQIAANcBAAAAAAAAAAAywGAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T07:31:43.199Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,26 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Admin_Page.cs",
-              "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
-              "RelativeDocumentMoniker": "Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
-              "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
-              "RelativeToolTip": "Railway_Reservation_System\\BusinessLayer\\Admin\\Admin_Page.cs",
-              "ViewState": "AQIAADYBAAAAAAAAAAAAAC8BAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T07:31:27.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Program.cs",
               "RelativeDocumentMoniker": "Railway_Reservation_System\\Program.cs",
               "ToolTip": "D:\\Railway_Res_Sys\\Railway_Reservation_System\\Railway_Reservation_System\\Program.cs",
               "RelativeToolTip": "Railway_Reservation_System\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAArAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCsAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T09:53:41.98Z"
             },

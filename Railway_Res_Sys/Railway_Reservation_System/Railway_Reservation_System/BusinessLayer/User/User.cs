@@ -77,50 +77,58 @@ namespace Railway_Reservation_System.BusinessLayer.User
                 }
                 else
                 {
-                    Console.WriteLine("User not found. Please try again or register as a new user.");
+                    Console.WriteLine();
+                    Console.WriteLine("\t\t\tUser not Found!!! Please try again or register as a new user.");
                     User_LogIn_Page();
                 }
             }
             else
             {
-                Console.WriteLine("Invalid Input.....Try Again !!!");
+                Console.WriteLine();
+                Console.WriteLine("\t\t\t\tInvalid Input.....Try Again !!!");
                 User_LogIn_Page();
             }
 
-          
-            Console.WriteLine("1. Show All Trains \n2. Book Tickets \n3. Cancel Tickets \n4. View Bookings/Cancellations \n5. Exit");
-            Console.WriteLine();
 
-            Console.WriteLine("=> Select the respective options:\n");
-            int User_Input = int.Parse(Console.ReadLine());
-
-
-            switch (User_Input)
+            bool flag = true;
+            while(flag)
             {
-                case 1:
-                    Show_All_Trains();
-                    break;
+                Console.WriteLine("1. Show All Trains \n2. Book Tickets \n3. Cancel Tickets \n4. View Bookings/Cancellations \n5. Exit");
+                Console.WriteLine();
 
-                case 2:
-                    Book_Ticket(uid);
-                    break;
+                Console.WriteLine("=> Select the respective options:\n");
+                int User_Input = int.Parse(Console.ReadLine());
 
-                case 3:
-                    Cancel_Ticket();
-                    break;
 
-                case 4:
-                    Booking_Cancellation();
-                    break;
+                switch (User_Input)
+                {
+                    case 1:
+                        Show_All_Trains();
+                        break;
 
-                case 5:
-                    Exit();
-                    break;
+                    case 2:
+                        Book_Ticket(uid);
+                        break;
 
-                default:
-                    Console.WriteLine("Wrong Input !!");
-                    break;
+                    case 3:
+                        Cancel_Ticket();
+                        break;
+
+                    case 4:
+                        Booking_Cancellation();
+                        break;
+
+                    case 5:
+                        flag = false;
+                        Exit();
+                        break;
+
+                    default:
+                        Console.WriteLine("Wrong Input !!");
+                        break;
+                }
             }
+            
         }
 
 
@@ -141,8 +149,6 @@ namespace Railway_Reservation_System.BusinessLayer.User
             }
             Console.WriteLine("=======================================================================================================================");
             Console.WriteLine();
-            Exit();
-
         }
 
 
@@ -150,166 +156,182 @@ namespace Railway_Reservation_System.BusinessLayer.User
         {
             Show_All_Trains();
             Console.WriteLine();
+            to:
             Console.WriteLine("\nEnter train number for which you want to book a ticket:\n");
             int trainNumber = int.Parse(Console.ReadLine());
-            Console.WriteLine($"\t\t\tSeats availability of berths and fare of seats of Train NO :- {trainNumber} are:");
-            Console.WriteLine();
+            
 
             // Check if the train exists
             var train = tr.Trains.FirstOrDefault(t => t.Train_No == trainNumber);
             if (train == null)
             {
-                Console.WriteLine($"Train number {trainNumber} does not exist.");
-                return;
+                Console.WriteLine($"\t\t\t|||Train number {trainNumber} does not exist.|||");
+                Console.WriteLine();
+                goto to;
             }
+
 
 
             // Get berth availability and seat fare for the selected train.
             var trBrth = tr.Berth_Availability.FirstOrDefault(b => b.Train_No == trainNumber);
             var stFair = tr.Seat_Fare.SingleOrDefault(f => f.Train_No == trainNumber);
 
-            if (trBrth == null || stFair == null)
+            var tr_active = tr.Trains.Where(t => trainNumber == t.Train_No && t.isActiven == true).FirstOrDefault();
+
+            if (tr_active == null)
             {
-                Console.WriteLine("Berth availability or seat fare data not found for the selected train.");
-                return;
-            }
-
-            Console.WriteLine("=======================================================================================================================");
-            Console.WriteLine($"Berth availability for [1-AC]:-- {trBrth.C1_AC}\t\t" + "Fare of Seat :--" + stFair.C1_AC_Fare);
-            Console.WriteLine($"Berth availability for [2-AC]:-- {trBrth.C2_AC}\t\t" + "Fare of Seat :--" + stFair.C2_AC_Fare);
-            Console.WriteLine($"Berth availability for [SL-Class]:-- {trBrth.SL_Class}\t" + "Fare of Seat :--" + stFair.SL_Class_Fare);
-            Console.WriteLine("=======================================================================================================================");
-            Console.WriteLine("");
-
-            Console.WriteLine($"Select your berth class choice: \n\n1. [1-AC] \n2. [2-AC] \n3. [SL-Class]\n");
-            int berthChoice = int.Parse(Console.ReadLine());
-
-
-            Console.WriteLine("Enter the number of tickets you want to book:\n");
-            int numberOfTickets = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-
-            // Validating number of tickets
-            if (numberOfTickets <= 0 || numberOfTickets > 5)
-            {
-                Console.WriteLine("Invalid number of tickets. Maximum 5 tickets can be booked at a time.");
-                return;
-            }
-
-           
-            User_LogIn ul = new User_LogIn();
-
-            //Because we are taking integer as input from user when he's going to select the berth but berths are in string.
-            string berth = "";
-
-            //Because we need the fair of particulare person when i'm going to create ticket / update the data in Ticket_Confirmation Table.
-            int fare = 0;
-
-            //We have to calculate total fair according to number of tickets selected by user.
-            int totalFare = 0;
-            switch (berthChoice)
-            {
-                case 1:
-                    totalFare = (int)(numberOfTickets * stFair.C1_AC_Fare);
-                    fare = (int)(stFair.C1_AC_Fare);
-                    berth = "1-AC";
-                    break;
-
-                case 2:
-                    totalFare = (int)(numberOfTickets * stFair.C2_AC_Fare);
-                    fare = (int)(stFair.C2_AC_Fare);
-                    berth = "2-AC";
-                    break;
-
-                case 3:
-                    totalFare = (int)(numberOfTickets * stFair.SL_Class_Fare);
-                    fare = (int)(stFair.SL_Class_Fare);
-                    berth = "SL-Class";
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid berth choice.");
-                    return;
-            }
-
-            // Asking user to Confirm booking.
-            Console.WriteLine($"Total amount to be paid for {numberOfTickets} tickets is: {totalFare}");
-            Console.WriteLine("=======================================================================================================================");
-            Console.WriteLine("Are you sure to Confirm booking:\n 1. Yes\n 2. No \n");
-            int confirmation = int.Parse(Console.ReadLine());
-
-
-            var st = tr.Trains.FirstOrDefault(t => t.Source_Station == t.Source_Station);
-            var dt = tr.Trains.FirstOrDefault(t => t.Destination_Station == t.Destination_Station);
-            var us = tr.User_LogIn.FirstOrDefault(t => t.User_id == t.User_id);
-            
-
-
-            if (confirmation == 1)
-            {
-                // Create tickets and save to database
-                for (int i = 0; i < numberOfTickets; i++)
-                {
-                    Console.WriteLine($"Enter passenger name for ticket {i + 1}:");
-                    string passengerName = Console.ReadLine();
-
-                    Console.WriteLine($"Enter passenger age for ticket {i + 1}:");
-                    int passengerAge = int.Parse(Console.ReadLine());
-                    Console.WriteLine();
-
-                    // Generating PNR Number using random numbers
-                    int pnr = new Random().Next(100000, 999999);
-
-
-                    //Create new Ticket object
-                    Ticket_Confirmation ticket = new Ticket_Confirmation();
-
-                    ticket.Train_No = trainNumber;
-                    ticket.Passenger_Name = passengerName;
-                    ticket.Age = passengerAge;
-                    ticket.User_Id = uid;
-                    ticket.Source_Station = train.Source_Station;
-                    ticket.Destination_Station = train.Destination_Station;
-                    ticket.Berth = berth;
-                    ticket.Paid_Amount = fare;
-                    ticket.Booking_Date = DateTime.Now; // Assuming current date as booking date
-                    ticket.Travelling_Date = DateTime.Now.AddDays(5);
-                    ticket.PNR_No = pnr;
-
-
-                    tr.Ticket_Confirmation.Add(ticket);
-                    //tr.Berth_Availability.Add(trBrth);
-
-                    //Console.WriteLine("Congratulations your ticket is Booked and your Ticket details are:");
-                    Console.WriteLine();
-
-                   
-                    Console.WriteLine("\t\t\t\t\t***Your Ticket Details***");
-                    Console.WriteLine("===================================================================================================================");
-                    //Console.WriteLine($"Ticket of {i +1} passenger:");
-                    Console.WriteLine($"Train Number: {ticket.Train_No}");
-                    Console.WriteLine($"Passenger Name: {ticket.Passenger_Name}");
-                    Console.WriteLine($"Age: {ticket.Age}");
-                    Console.WriteLine($"User ID: {ticket.User_Id}");
-                    Console.WriteLine($"Source Station: {ticket.Source_Station}");
-                    Console.WriteLine($"Destination Station: {ticket.Destination_Station}");
-                    Console.WriteLine($"Berth: {berth}");
-                    Console.WriteLine($"Paid Amount: {ticket.Paid_Amount}");
-                    Console.WriteLine($"Booking Date: {ticket.Booking_Date}");
-                    Console.WriteLine($"Travelling Date: {ticket.Travelling_Date}");
-                    Console.WriteLine($"PNR Number: {ticket.PNR_No}");
-                    Console.WriteLine("==================================================================================================================");
-                    Console.WriteLine();
-                }
-                Console.WriteLine("Tickets booked successfully!");
-                tr.SaveChanges();
-
-                //calling the procedure which subtracts the no. of booked seats from berth_Availability table and update it.
-                tr.UpdateBookedTicket(trainNumber, berth, numberOfTickets);
+                Console.WriteLine("\t\t\t\t ||| This train is not Active.|||");
+                goto to;
+                
             }
             else
             {
-                Console.WriteLine("Booking cancelled.");
+
+                Console.WriteLine($"\t\t\tSeats availability of berths and fare of seats of Train NO {trainNumber} are:");
+                Console.WriteLine();
+
+                Console.WriteLine("=======================================================================================================================");
+                Console.WriteLine($"Berth availability for [1-AC]:-- {trBrth.C1_AC}\t\t" + "Fare of Seat :--" + stFair.C1_AC_Fare);
+                Console.WriteLine($"Berth availability for [2-AC]:-- {trBrth.C2_AC}\t\t" + "Fare of Seat :--" + stFair.C2_AC_Fare);
+                Console.WriteLine($"Berth availability for [SL-Class]:-- {trBrth.SL_Class}\t" + "Fare of Seat :--" + stFair.SL_Class_Fare);
+                Console.WriteLine("=======================================================================================================================");
+                Console.WriteLine("");
+
+                Console.WriteLine($"Select your berth class choice: \n\n1. [1-AC] \n2. [2-AC] \n3. [SL-Class]\n");
+                int berthChoice = int.Parse(Console.ReadLine());
+
+
+                Console.WriteLine("Enter the number of tickets you want to book:\n");
+                int numberOfTickets = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+                // Validating number of tickets
+                if (numberOfTickets <= 0 || numberOfTickets > 5)
+                {
+                    Console.WriteLine("\t\t *Invalid number of tickets. Maximum 5 tickets can be booked at a time.*");
+                    Console.WriteLine();
+                    Book_Ticket(uid);
+                    return;
+                }
+
+
+                User_LogIn ul = new User_LogIn();
+
+                //Because we are taking integer as input from user when he's going to select the berth but berths are in string.
+                string berth = "";
+
+                //Because we need the fair of particulare person when i'm going to create ticket / update the data in Ticket_Confirmation Table.
+                int fare = 0;
+
+                //We have to calculate total fair according to number of tickets selected by user.
+                int totalFare = 0;
+                switch (berthChoice)
+                {
+                    case 1:
+                        totalFare = (int)(numberOfTickets * stFair.C1_AC_Fare);
+                        fare = (int)(stFair.C1_AC_Fare);
+                        berth = "1-AC";
+                        break;
+
+                    case 2:
+                        totalFare = (int)(numberOfTickets * stFair.C2_AC_Fare);
+                        fare = (int)(stFair.C2_AC_Fare);
+                        berth = "2-AC";
+                        break;
+
+                    case 3:
+                        totalFare = (int)(numberOfTickets * stFair.SL_Class_Fare);
+                        fare = (int)(stFair.SL_Class_Fare);
+                        berth = "SL-Class";
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid berth choice.");
+                        return;
+                }
+
+                // Asking user to Confirm booking.
+                Console.WriteLine($"Total amount to be paid for {numberOfTickets} tickets is: {totalFare}");
+                Console.WriteLine("=======================================================================================================================");
+                Console.WriteLine("Are you sure to Confirm booking:\n 1. Yes\n 2. No \n");
+                int confirmation = int.Parse(Console.ReadLine());
+
+
+                var st = tr.Trains.FirstOrDefault(t => t.Source_Station == t.Source_Station);
+                var dt = tr.Trains.FirstOrDefault(t => t.Destination_Station == t.Destination_Station);
+                var us = tr.User_LogIn.FirstOrDefault(t => t.User_id == t.User_id);
+
+
+
+                if (confirmation == 1)
+                {
+                    // Create tickets and save to database
+                    for (int i = 0; i < numberOfTickets; i++)
+                    {
+                        Console.WriteLine($"Enter passenger name for ticket {i + 1}:");
+                        string passengerName = Console.ReadLine();
+
+                        Console.WriteLine($"Enter passenger age for ticket {i + 1}:");
+                        int passengerAge = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine($"Enter the Date on which you want to Travel in (YYYY-MM-DD) format:");
+                        string date_input = Console.ReadLine();
+
+                        Console.WriteLine();
+
+                        // Generating PNR Number using random numbers
+                        int pnr = new Random().Next(100000, 999999);
+
+
+                        //Create new Ticket object
+                        Ticket_Confirmation ticket = new Ticket_Confirmation();
+
+                        ticket.Train_No = trainNumber;
+                        ticket.Passenger_Name = passengerName;
+                        ticket.Age = passengerAge;
+                        ticket.User_Id = uid;
+                        ticket.Source_Station = train.Source_Station;
+                        ticket.Destination_Station = train.Destination_Station;
+                        ticket.Berth = berth;
+                        ticket.Paid_Amount = fare;
+                        ticket.Booking_Date = DateTime.Now; // Assuming current date as booking date
+                        ticket.PNR_No = pnr;
+
+
+                        tr.Ticket_Confirmation.Add(ticket);
+                        //tr.Berth_Availability.Add(trBrth);
+
+                        //Console.WriteLine("Congratulations your ticket is Booked and your Ticket details are:");
+                        Console.WriteLine();
+
+
+                        Console.WriteLine("\t\t\t\t\t***Your Ticket Details***");
+                        Console.WriteLine("===================================================================================================================");
+                        //Console.WriteLine($"Ticket of {i +1} passenger:");
+                        Console.WriteLine($"Train Number: {ticket.Train_No}");
+                        Console.WriteLine($"Passenger Name: {ticket.Passenger_Name}");
+                        Console.WriteLine($"Age: {ticket.Age}");
+                        Console.WriteLine($"User ID: {ticket.User_Id}");
+                        Console.WriteLine($"Source Station: {ticket.Source_Station}");
+                        Console.WriteLine($"Destination Station: {ticket.Destination_Station}");
+                        Console.WriteLine($"Berth: {berth}");
+                        Console.WriteLine($"Paid Amount: {ticket.Paid_Amount}");
+                        Console.WriteLine($"Booking Date: {ticket.Booking_Date}");
+                        Console.WriteLine($"Travelling Date: {date_input}");
+                        Console.WriteLine($"PNR Number: {ticket.PNR_No}");
+                        Console.WriteLine("==================================================================================================================");
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine("\t\t\t\tTickets booked successfully!\n");
+                    tr.SaveChanges();
+
+                    //calling the procedure which subtracts the no. of booked seats from berth_Availability table and update it.
+                    tr.UpdateBookedTicket(trainNumber, berth, numberOfTickets);
+                }
+                else
+                {
+                    Console.WriteLine("Booking cancelled.");
+                }
             }
 
         }
@@ -319,7 +341,9 @@ namespace Railway_Reservation_System.BusinessLayer.User
 
         public static void Cancel_Ticket()
         {
-            Console.WriteLine("==========================================================================================================");
+            Show_All_Trains();
+            Console.WriteLine("\t\t\t\t***Welcome to Ticket Cancellation Page***");
+            Console.WriteLine("==================================================================================================================\n");
             Console.WriteLine("Enter train number of train which you want to cancel:");
             int tc = int.Parse(Console.ReadLine());
 
@@ -338,8 +362,6 @@ namespace Railway_Reservation_System.BusinessLayer.User
 
             // Removing the ticket from the database
             //tr.Ticket_Confirmation.Remove(ticket);
-
-            Console.WriteLine("Ticket cancelled successfully!");
 
             // Generating a cancel ID using random numbers
             int C_Id = new Random().Next(100000, 999999);
@@ -363,7 +385,7 @@ namespace Railway_Reservation_System.BusinessLayer.User
 
             Console.WriteLine("===================================================================================================================");
             Console.WriteLine();
-            Console.WriteLine($"Cancel ID: {cancellation.Train_No}");
+            Console.WriteLine($"Cancel ID: {cancellation.Cancel_Id}");
             Console.WriteLine($"Train Number: {cancellation.Train_No}");
             Console.WriteLine($"Passenger Name: {cancellation.Passenger_Name}");
             Console.WriteLine($"Age: {cancellation.Age}");
@@ -377,6 +399,7 @@ namespace Railway_Reservation_System.BusinessLayer.User
 
             tr.Ticket_Cancellation.Add(cancellation);
             tr.SaveChanges();
+            Console.WriteLine("\t\t\t\tTicket cancelled successfully!");
 
             //Calling function.....
             Remove_Tkt(pnrNo); 
@@ -472,7 +495,7 @@ namespace Railway_Reservation_System.BusinessLayer.User
         static void Exit()
         {
             Console.WriteLine("Thanks for using Railway Reservation System \n");
-            Console.WriteLine("\t\t\t\t*****Please visit Again.......*****");
+            //Console.WriteLine("\t\t\t\t*****Please visit Again.......*****");
         }
     }
 }
