@@ -8,19 +8,16 @@
 <body>
     <h2>Even/Odd Check....</h2>
 
-<div id="output"></div>
-
 <script>
 for (let i = 0; i <= 15; i++) {
-    let message = i + ' is ';
-    // Checking if the current number is even or odd
-    if (i % 2 === 0) {
-        message += "even";
+    // Now we are going to check current number is even or odd.
+    if (i % 2 == 0) {
+        //if the number is even
+        document.write(i + " is Even </br>");
     } else {
-        message += "odd";
+        //if the number is odd
+        document.write(i + " is Odd </br>");
     }
-    // Displaying the message
-    document.getElementById("output").innerHTML += message + "<br>";
 }
 </script>
 </body>
