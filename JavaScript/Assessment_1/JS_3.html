@@ -8,15 +8,16 @@
 <body>
     <h2>Button Click Event</h2>
 
+    <button id="myButton">Click Me</button>
     <script>
-       const button = document.createElement('button');
-       button.textContent = 'Click';
+    // Get the button element
+    const button = document.getElementById("myButton");
 
-       // Adding a Event Listener
-       button.addEventListener('click', () => {document.write('Button is clicked.........');})
-
-      // Appending button
-      document.body.appendChild(button);
-    </script>
+    // Add a click event listener to the button
+    button.addEventListener("click", function() {
+    // Log a message when the button is clicked
+    console.log("Button is clicked!");
+});
+</script>
 </body>
 </html>
