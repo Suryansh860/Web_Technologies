@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestionNo_2</title>
+</head>
+<body>
+    <h2>Even/Odd Check....</h2>
+
+<div id="output"></div>
+
+<script>
+for (let i = 0; i <= 15; i++) {
+    let message = i + ' is ';
+    // Checking if the current number is even or odd
+    if (i % 2 === 0) {
+        message += "even";
+    } else {
+        message += "odd";
+    }
+    // Displaying the message
+    document.getElementById("output").innerHTML += message + "<br>";
+}
+</script>
+</body>
+</html>
