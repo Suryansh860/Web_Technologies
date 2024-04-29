@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\question_2\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|solutionrelative:question_2\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|d:\\web_technologies\\web_api\\assignment\\assessment_1\\question_2\\question_2\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|solutionrelative:question_2\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\question_2\\models\\moviesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|solutionrelative:question_2\\models\\moviesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|d:\\web_technologies\\web_api\\assignment\\assessment_1\\question_2\\question_2\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|solutionrelative:question_2\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\question_2\\models\\repo\\imovierepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|solutionrelative:question_2\\models\\repo\\imovierepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|d:\\web_technologies\\web_api\\assignment\\assessment_1\\question_2\\question_2\\models\\repo\\movierepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42D2092B-A0CA-42BD-8D24-9FA245224DD0}|Question_2\\Question_2.csproj|solutionrelative:question_2\\models\\repo\\movierepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MovieRepo.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\Repo\\MovieRepo.cs",
+              "RelativeDocumentMoniker": "Question_2\\Models\\Repo\\MovieRepo.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\Repo\\MovieRepo.cs",
+              "RelativeToolTip": "Question_2\\Models\\Repo\\MovieRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T07:21:49.647Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Question_2\\Controllers\\MoviesController.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Question_2\\Controllers\\MoviesController.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAowFcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T07:51:30.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Web.config",
+              "RelativeDocumentMoniker": "Question_2\\Web.config",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Web.config",
+              "RelativeToolTip": "Question_2\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-29T07:35:04.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IMovieRepo.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\Repo\\IMovieRepo.cs",
+              "RelativeDocumentMoniker": "Question_2\\Models\\Repo\\IMovieRepo.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\Repo\\IMovieRepo.cs",
+              "RelativeToolTip": "Question_2\\Models\\Repo\\IMovieRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T07:22:14.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MoviesDbContext.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\MoviesDbContext.cs",
+              "RelativeDocumentMoniker": "Question_2\\Models\\MoviesDbContext.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\MoviesDbContext.cs",
+              "RelativeToolTip": "Question_2\\Models\\MoviesDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T07:19:00.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "Question_2\\Models\\Movie.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assessment_1\\Question_2\\Question_2\\Models\\Movie.cs",
+              "RelativeToolTip": "Question_2\\Models\\Movie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T07:17:44.455Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

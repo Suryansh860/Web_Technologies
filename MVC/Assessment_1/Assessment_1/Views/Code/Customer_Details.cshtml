@@ -1,0 +1,32 @@
+﻿@model Assessment_1.Customer
+@{
+    ViewBag.Title = "Customer_Details";
+}
+
+<h2>Customer_Details Of Order Id - 10248</h2>
+
+<table class="table">
+    <tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+        <th>Contact Title</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Postal Code</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>@Model.CustomerID</td>
+        <td>@Model.CompanyName</td>
+        <td>@Model.ContactName</td>
+        <td>@Model.ContactTitle</td>
+        <td>@Model.Address</td>
+        <td>@Model.City</td>
+        <td>@Model.Region</td>
+        <td>@Model.PostalCode</td>
+        <td>@Model.Country</td>
+    </tr>
+</table>
+
