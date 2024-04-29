@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assignment_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{76DB5227-9B55-4263-B53C-01B3CAE0F41B}|Assignment_1\\Assignment_1.csproj|d:\\web_technologies\\web_api\\assignment\\assignment_1\\assignment_1\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DB5227-9B55-4263-B53C-01B3CAE0F41B}|Assignment_1\\Assignment_1.csproj|solutionrelative:assignment_1\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DB5227-9B55-4263-B53C-01B3CAE0F41B}|Assignment_1\\Assignment_1.csproj|D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assignment_1\\assignment_1\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DB5227-9B55-4263-B53C-01B3CAE0F41B}|Assignment_1\\Assignment_1.csproj|solutionrelative:assignment_1\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CountryController.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assignment_1\\Assignment_1\\Controllers\\CountryController.cs",
+              "RelativeDocumentMoniker": "Assignment_1\\Controllers\\CountryController.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assignment_1\\Assignment_1\\Controllers\\CountryController.cs",
+              "RelativeToolTip": "Assignment_1\\Controllers\\CountryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T07:48:14.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Country.cs",
+              "DocumentMoniker": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assignment_1\\Assignment_1\\Models\\Country.cs",
+              "RelativeDocumentMoniker": "Assignment_1\\Models\\Country.cs",
+              "ToolTip": "D:\\WEB_TECHNOLOGIES\\Web_Api\\Assignment\\Assignment_1\\Assignment_1\\Models\\Country.cs",
+              "RelativeToolTip": "Assignment_1\\Models\\Country.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T07:47:37.477Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
