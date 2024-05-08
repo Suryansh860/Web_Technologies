@@ -40,5 +40,5 @@ public partial class Order
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
     public virtual Shipper? ShipViaNavigation { get; set; }
-    public decimal Total { get; internal set; }
+    //public decimal Total { get; internal set; }
 }

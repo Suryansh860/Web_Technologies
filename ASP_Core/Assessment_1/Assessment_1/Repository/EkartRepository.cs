@@ -20,17 +20,18 @@ namespace Assessment_1.Repository
             return order;
         }
 
-        public Order GetOrderDetails(int orderId)
+        public List<Order> GetOrderDetails()
         {
-            return _dbContext.Orders.FirstOrDefault(x => x.OrderId == orderId);
+            //return _dbContext.Orders.FirstOrDefault(x => x.OrderId == orderId);
+            return _dbContext.Orders.ToList();
         }
 
-        public decimal CalculateBill(int orderId)
-        {
-            var orderDetails = _dbContext.OrderDetails.Where(od => od.OrderId == orderId).ToList();
-            decimal totalBill = orderDetails.Sum(od => od.UnitPrice * od.Quantity);
-            return totalBill;
-        }
+        //public decimal CalculateBill(int orderId)
+        //{
+        //    var orderDetails = _dbContext.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+        //    decimal totalBill = orderDetails.Sum(od => od.UnitPrice * od.Quantity);
+        //    return totalBill;
+        //}
 
         public List<Customer> GetCustomersByOrderDate(DateTime orderDate)
         {
@@ -39,12 +40,23 @@ namespace Assessment_1.Repository
 
         public Customer GetCustomerWithHighestOrder()
         {
-            return _dbContext.Customers.OrderByDescending(c => c.Orders.Sum(o => o.Total)).FirstOrDefault();
+            return _dbContext.Orders
+                 .GroupBy(o => o.CustomerId)
+                 .OrderByDescending(g => g.Count())
+                 .Select(g => g.First().Customer)
+                 .FirstOrDefault();
         }
 
         public decimal Calculate_Bill(int orderId)
         {
-            throw new NotImplementedException();
+            var orderDetails = _dbContext.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+            decimal totalBill = orderDetails.Sum(od => od.UnitPrice * od.Quantity);
+            return totalBill;
         }
+
+        //public decimal Calculate_Bill(int orderId)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

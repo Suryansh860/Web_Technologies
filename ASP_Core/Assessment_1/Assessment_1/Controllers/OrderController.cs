@@ -19,22 +19,22 @@ public class OrderController : Controller
         return View();
     }
 
-    // POST
-    [HttpPost]
-    public IActionResult Place(Order order)
-    {
-        if (ModelState.IsValid)
-        {
-            var placedOrder = _repository.PlaceOrder(order);
-            return RedirectToAction("Details", new { orderId = placedOrder.OrderId });
-        }
-        return View(order);
-    }
+    
+    //[HttpPost]
+    //public IActionResult Place(Order order)
+    //{
+    //    if (ModelState.IsValid)
+    //    {
+    //        var placedOrder = _repository.PlaceOrder(order);
+    //        return RedirectToAction("Details", new { orderId = placedOrder.OrderId });
+    //    }
+    //    return View(order);
+    //}
 
     // GET
-    public IActionResult Details(int orderId)
+    public IActionResult Details()
     {
-        var order = _repository.GetOrderDetails(orderId);
+        var order = _repository.GetOrderDetails();
         if (order == null)
         {
             return NotFound();
@@ -42,7 +42,6 @@ public class OrderController : Controller
         return View(order);
     }
 
-    // GET
     public IActionResult Bill(int orderId)
     {
         var bill = _repository.Calculate_Bill(orderId);
@@ -55,7 +54,6 @@ public class OrderController : Controller
         return View();
     }
 
-    // GET
     public IActionResult CustomerDetailsByDate(DateTime orderDate)
     {
         var customers = _repository.GetCustomersByOrderDate(orderDate);
@@ -66,7 +64,6 @@ public class OrderController : Controller
         return View(customers);
     }
 
-    // GET
     public IActionResult HighestOrderCustomer()
     {
         var customer = _repository.GetCustomerWithHighestOrder();

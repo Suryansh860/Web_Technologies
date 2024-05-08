@@ -1,8 +1,13 @@
+using Assessment_1.Models;
+using Assessment_1.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NorthwindConnetion")));
+builder.Services.AddScoped<IEkartRepository, EkartRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,12 +1,12 @@
 ﻿@model List<Assessment_1.Models.Customer>
 
-<h2>Customers who Placed Orders on @ViewBag.OrderDate</h2>
+<h2>Customers who Placed Orders on the Given Date. @ViewBag.OrderDate</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Customer ID</th>
-            <th>Name</th>
+            <th>Customer Name</th>
+       
         </tr>
     </thead>
     <tbody>
@@ -14,7 +14,7 @@
         {
             <tr>
                 <td>@customer.CustomerId</td>
-                <td>@customer.CustomerTypes</td>
+    
             </tr>
         }
     </tbody>
